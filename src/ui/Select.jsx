@@ -13,3 +13,21 @@ const StyledSelect = styled.select`
   font-weight: 500;
   box-shadow: var(--shadow-sm);
 `;
+
+function Select({ options, value, onChange, ...props }) {
+  // console.log(props);
+
+  return (
+    <StyledSelect value={value} onChange={onChange} {...props}>
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </StyledSelect>
+  );
+}
+
+export default Select;
+
+// ...props - It will show the object of all your props
