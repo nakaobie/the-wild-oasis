@@ -82,21 +82,11 @@ async function createBookings() {
     )
       status = "checked-in";
 
-    // return {
-    //   ...booking,
-    //   numNights,
-    //   cabinPrice,
-    //   extrasPrice,
-    //   totalPrice,
-    //   guestId: allGuestIds.at(booking.guestId - 1),
-    //   cabinId: allCabinIds.at(booking.cabinId - 1),
-    //   status,
-    // };
-
     return {
       ...booking,
       numNights,
       cabinPrice,
+      extrasPrice,
       totalPrice,
       guestId: allGuestIds.at(booking.guestId - 1),
       cabinId: allCabinIds.at(booking.cabinId - 1),
