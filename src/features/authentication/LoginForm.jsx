@@ -14,7 +14,15 @@ function LoginForm() {
   function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
-    login({ email, password });
+    login(
+      { email, password },
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+      }
+    );
   }
 
   return (
@@ -50,3 +58,5 @@ function LoginForm() {
 }
 
 export default LoginForm;
+
+// We use onSettled() here which is a react query mutation method here because we cannot use it directly at the mutation fn as we don't have access to the login variables there in useLogin
