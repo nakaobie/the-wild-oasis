@@ -10,7 +10,7 @@ export function useLogin() {
   const { mutate: login, isLoading } = useMutation({
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (user) => {
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
       queryClient.setQueryData(["user"], user.user);
       //   console.log(user);
     },
@@ -24,3 +24,5 @@ export function useLogin() {
 }
 
 // queryClient.setQueriesData(["user"], user); - we set the react query data from user, so it doesn't have to be reloaded. This is unnecessary here because we are trying to prevent the spinner from spinning when we login. // It even gave a bug here.
+
+// replace - means we erase where we came from, so that back button won't work
