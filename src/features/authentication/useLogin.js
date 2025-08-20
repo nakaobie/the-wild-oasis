@@ -23,6 +23,6 @@ export function useLogin() {
   return { login, isLoading };
 }
 
-// queryClient.setQueriesData(["user"], user); - we set the react query data from user, so it doesn't have to be reloaded. This is unnecessary here because we are trying to prevent the spinner from spinning when we login. // It even gave a bug here.
+// queryClient.setQueryData(["user"], user); - we set the react query data from user, so it doesn't have to be reloaded. This is unnecessary here because we are trying to prevent the spinner from spinning when we login. // It even gave a bug here.
 
 // replace - means we erase where we came from, so that back button won't work
