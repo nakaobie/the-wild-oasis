@@ -75,7 +75,12 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset" disabled={isLoading}>
+        <Button
+          variation="secondary"
+          type="reset"
+          disabled={isLoading}
+          onClick={reset}
+        >
           Cancel
         </Button>
         <Button disabled={isLoading}>Create new user</Button>
@@ -99,3 +104,5 @@ The problem is completely fixed by:
 
 3. Call reset in a useEffect: useEffect(() => reset(), [isLoading])
 */
+
+// onClick={reset} - will clear all the errors
