@@ -112,4 +112,6 @@ export default App;
 // npm i react-hot-toast
 
 // Introducing Another Library - React Hook Form
-//npm i react-hook-form@7
+// npm i react-hook-form@7
+
+// npm i recharts@2
